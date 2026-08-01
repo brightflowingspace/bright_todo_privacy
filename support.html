@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bright Todo サポート / Support</title>
+<style>
+  :root {
+    --bg: #f8fafc;
+    --fg: #1e293b;
+    --muted: #64748b;
+    --accent: #ff6fa8;
+    --accent-light: #ffd7e6;
+    --border: #e2e8f0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1e1420;
+      --fg: #f1e9ec;
+      --muted: #b09aa4;
+      --accent: #ff9ec4;
+      --accent-light: #5c001e;
+      --border: #3a2a30;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Segoe UI", Roboto, sans-serif;
+    line-height: 1.85;
+    letter-spacing: 0.01em;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  header.top {
+    margin-bottom: 56px;
+  }
+  .brand {
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    letter-spacing: 0.01em;
+  }
+  .updated {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  nav.lang {
+    margin-top: 28px;
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+  }
+  nav.lang a {
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--accent-light);
+    padding: 6px 14px;
+    border-radius: 999px;
+    transition: background 0.15s ease;
+  }
+  nav.lang a:hover { background: var(--accent-light); }
+  section.lang-block {
+    padding-top: 24px;
+  }
+  section.lang-block + section.lang-block {
+    margin-top: 64px;
+    padding-top: 56px;
+    border-top: 1px solid var(--border);
+  }
+  h2.lang-title {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 32px;
+  }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 40px 0 12px;
+    color: var(--accent);
+  }
+  p { margin: 0 0 16px; font-size: 15px; }
+  ul { margin: 0 0 16px; padding-left: 1.3em; font-size: 15px; }
+  li { margin-bottom: 6px; }
+  a.inline { color: var(--accent); }
+  .contact-box {
+    margin: 8px 0 16px;
+    padding: 18px 20px;
+    background: var(--accent-light);
+    border-radius: 12px;
+  }
+  .contact-box a {
+    color: var(--fg);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  table.spec {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 0 0 16px;
+  }
+  table.spec th, table.spec td {
+    text-align: left;
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  table.spec th {
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  table.spec td.pro { color: var(--accent); font-weight: 600; }
+  footer {
+    margin-top: 72px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">Bright Todo</div>
+    <h1>サポート / Support</h1>
+    <div class="updated">最終更新日 / Last updated: 2026年8月1日 (August 1, 2026)</div>
+    <nav class="lang">
+      <a href="#ja">日本語</a>
+      <a href="#en">English</a>
+    </nav>
+  </header>
+
+  <section class="lang-block" id="ja" lang="ja">
+    <h2 class="lang-title">日本語</h2>
+
+    <h3>お問い合わせ</h3>
+    <p>不具合報告・ご質問・ご要望は、下記メールアドレスまでご連絡ください。</p>
+    <div class="contact-box">
+      <a href="mailto:brightflowingspace@gmail.com">brightflowingspace@gmail.com</a>
+    </div>
+
+    <h3>アプリについて</h3>
+    <p>Bright Todoは、シンプルさを重視したToDoリストアプリです。Android・iOS・Mac（Electron）に対応しており、アカウント登録・ログインは不要です。</p>
+    <ul>
+      <li>タスクの作成・並び替え・完了管理（件数無制限）</li>
+      <li>ラベルによる分類</li>
+      <li>ホーム画面ウィジェット（Android／iOS）</li>
+      <li>音声入力によるタスク登録</li>
+      <li>リマインダー通知・繰り返しタスク</li>
+      <li>データのバックアップ・エクスポート／インポート</li>
+      <li>アプリカラー・ウィジェットカラーのカスタマイズ</li>
+    </ul>
+
+    <h3>Free版 / Pro版の違い</h3>
+    <p>Proは広告表示やサブスクリプションのない、一度限りの買い切り購入です。</p>
+    <table class="spec">
+      <thead>
+        <tr><th></th><th>Free</th><th>Pro</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>タスク</td><td>無制限</td><td class="pro">無制限</td></tr>
+        <tr><td>ラベル</td><td>3件まで</td><td class="pro">無制限</td></tr>
+        <tr><td>アプリカラー</td><td>デフォルトのみ</td><td class="pro">全色</td></tr>
+        <tr><td>ウィジェットカラー</td><td>デフォルトのみ</td><td class="pro">全色</td></tr>
+        <tr><td>音声入力</td><td>—</td><td class="pro">利用可</td></tr>
+        <tr><td>リマインド通知</td><td>—</td><td class="pro">利用可</td></tr>
+        <tr><td>繰り返し</td><td>—</td><td class="pro">利用可</td></tr>
+        <tr><td>データ管理（バックアップ／エクスポート／インポート）</td><td>—</td><td class="pro">利用可</td></tr>
+      </tbody>
+    </table>
+
+    <h3>よくあるご質問</h3>
+    <p><strong>Q. 機種変更・再インストール後にProが反映されません。</strong><br>
+    A. アップグレード画面の「購入を復元」をタップしてください。同じApple ID／Googleアカウントでの購入が復元されます。</p>
+    <p><strong>Q. リマインダー通知が届きません。</strong><br>
+    A. 端末の設定アプリで、Bright Todoの通知許可がオンになっているかご確認ください。</p>
+    <p><strong>Q. データが消えてしまいました。</strong><br>
+    A. データはすべて端末内に保存されているため、アプリの削除（アンインストール）や端末の初期化を行うと復元できません。Pro版の「データ管理」機能で定期的にバックアップを取ることをおすすめします。</p>
+
+    <h3>プライバシーポリシー</h3>
+    <p>個人情報の取り扱いについては<a class="inline" href="./index.html">プライバシーポリシー</a>をご覧ください。</p>
+  </section>
+
+  <section class="lang-block" id="en" lang="en">
+    <h2 class="lang-title">English</h2>
+
+    <h3>Contact</h3>
+    <p>For bug reports, questions, or feature requests, please contact us at the email address below.</p>
+    <div class="contact-box">
+      <a href="mailto:brightflowingspace@gmail.com">brightflowingspace@gmail.com</a>
+    </div>
+
+    <h3>About the App</h3>
+    <p>Bright Todo is a to-do list app built around simplicity. It runs on Android, iOS, and Mac (Electron), and requires no account or login.</p>
+    <ul>
+      <li>Create, reorder, and complete tasks (unlimited)</li>
+      <li>Organize tasks with labels</li>
+      <li>Home screen widget (Android / iOS)</li>
+      <li>Add tasks with voice input</li>
+      <li>Reminders and repeating tasks</li>
+      <li>Backup, export, and import your data</li>
+      <li>Customizable app color and widget color</li>
+    </ul>
+
+    <h3>Free vs. Pro</h3>
+    <p>Pro is a single, one-time purchase — no subscription, no ads.</p>
+    <table class="spec">
+      <thead>
+        <tr><th></th><th>Free</th><th>Pro</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Tasks</td><td>Unlimited</td><td class="pro">Unlimited</td></tr>
+        <tr><td>Labels</td><td>Up to 3</td><td class="pro">Unlimited</td></tr>
+        <tr><td>App Color</td><td>Default only</td><td class="pro">All colors</td></tr>
+        <tr><td>Widget Color</td><td>Default only</td><td class="pro">All colors</td></tr>
+        <tr><td>Voice Input</td><td>—</td><td class="pro">Available</td></tr>
+        <tr><td>Reminders</td><td>—</td><td class="pro">Available</td></tr>
+        <tr><td>Repeat</td><td>—</td><td class="pro">Available</td></tr>
+        <tr><td>Data (backup / export / import)</td><td>—</td><td class="pro">Available</td></tr>
+      </tbody>
+    </table>
+
+    <h3>FAQ</h3>
+    <p><strong>Q. I switched devices / reinstalled the app and Pro is no longer active.</strong><br>
+    A. Tap "Restore Purchase" on the upgrade screen. Your purchase will be restored using the same Apple ID or Google account.</p>
+    <p><strong>Q. I'm not receiving reminder notifications.</strong><br>
+    A. Check that notifications are enabled for Bright Todo in your device's system settings.</p>
+    <p><strong>Q. My data disappeared.</strong><br>
+    A. All data is stored locally on your device, so uninstalling the app or resetting your device will permanently remove it. We recommend backing up regularly using the Pro "Data" feature.</p>
+
+    <h3>Privacy Policy</h3>
+    <p>See our <a class="inline" href="./index.html">Privacy Policy</a> for details on how we handle information.</p>
+  </section>
+
+  <footer>&copy; 2026 Bright Todo</footer>
+
+</div>
+</body>
+</html>
