@@ -36,8 +36,36 @@
   .wrap {
     max-width: 720px;
     margin: 0 auto;
-    padding: 64px 24px 96px;
+    padding: 32px 24px 96px;
   }
+  .site-header {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .site-header-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--fg);
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .site-header-brand img { border-radius: 6px; display: block; }
+  .site-header-back {
+    font-size: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .site-header-back:hover { text-decoration: underline; }
   header.top {
     margin-bottom: 56px;
   }
@@ -136,6 +164,13 @@
 </style>
 </head>
 <body>
+<header class="site-header">
+  <a href="https://brightflowingspace.netlify.app/" class="site-header-brand">
+    <img src="logo.svg" alt="brightflowingspace logo" width="20" height="20">
+    <span>brightflowingspace</span>
+  </a>
+  <a href="https://brightflowingspace.netlify.app/" class="site-header-back">&larr; サイトに戻る / Back to site</a>
+</header>
 <div class="wrap">
 
   <header class="top">
