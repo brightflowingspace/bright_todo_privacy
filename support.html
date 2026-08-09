@@ -104,6 +104,28 @@
   }
   .theme-toggle-group button svg { display: block; width: 15px; height: 15px; }
   .theme-toggle-group span { color: var(--border); font-size: 12px; }
+  .back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    background: #1e1420;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    z-index: 40;
+  }
+  .back-to-top svg { width: 18px; height: 18px; display: block; }
+  .back-to-top:hover { transform: scale(1.1); }
+  .back-to-top.visible { opacity: 1; pointer-events: auto; }
   header.top {
     margin-bottom: 56px;
   }
@@ -353,6 +375,13 @@
   <footer>&copy; 2026 Bright Todo</footer>
 
 </div>
+
+<a href="#" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</a>
+
 <script>
   var $themeLight = document.getElementById('theme-light');
   var $themeDark  = document.getElementById('theme-dark');
@@ -381,6 +410,17 @@
     var saved = null;
     try { saved = localStorage.getItem('bfs_theme'); } catch (err) {}
     if (!saved) setTheme(e.matches, false);
+  });
+
+  var $backToTop = document.querySelector('.back-to-top');
+  function toggleBackToTop() {
+    $backToTop.classList.toggle('visible', window.scrollY > 300);
+  }
+  window.addEventListener('scroll', toggleBackToTop, { passive: true });
+  toggleBackToTop();
+  $backToTop.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
 </body>
