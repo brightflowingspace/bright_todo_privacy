@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bright Todo プライバシーポリシー / Privacy Policy</title>
+<script>
+  // Set the theme before first paint to avoid a flash of the wrong theme.
+  (function () {
+    try {
+      var saved = localStorage.getItem('bfs_theme');
+      var dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (dark) document.documentElement.classList.add('dark');
+    } catch (e) {}
+  })();
+</script>
 <style>
   :root {
     --bg: #f8fafc;
@@ -13,15 +23,13 @@
     --accent-light: #ffd7e6;
     --border: #e2e8f0;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #1e1420;
-      --fg: #f1e9ec;
-      --muted: #b09aa4;
-      --accent: #ff9ec4;
-      --accent-light: #5c001e;
-      --border: #3a2a30;
-    }
+  :root.dark {
+    --bg: #1e1420;
+    --fg: #f1e9ec;
+    --muted: #b09aa4;
+    --accent: #ff9ec4;
+    --accent-light: #5c001e;
+    --border: #3a2a30;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -32,6 +40,7 @@
     font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Segoe UI", Roboto, sans-serif;
     line-height: 1.85;
     letter-spacing: 0.01em;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   .wrap {
     max-width: 720px;
@@ -59,13 +68,42 @@
     letter-spacing: 0.02em;
   }
   .site-header-brand img { border-radius: 6px; display: block; }
-  .site-header-back {
+  .site-header-lang {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-size: 12px;
-    color: var(--accent);
-    text-decoration: none;
-    white-space: nowrap;
+    font-weight: 700;
+    letter-spacing: 0.08em;
   }
-  .site-header-back:hover { text-decoration: underline; }
+  .site-header-lang a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .site-header-lang a:hover { color: var(--accent); }
+  .site-header-lang span { color: var(--border); }
+  .site-header-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .theme-toggle-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .theme-toggle-group button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--muted);
+    line-height: 0;
+    transition: color 0.15s ease;
+  }
+  .theme-toggle-group button svg { display: block; width: 15px; height: 15px; }
+  .theme-toggle-group span { color: var(--border); font-size: 12px; }
   header.top {
     margin-bottom: 56px;
   }
@@ -139,7 +177,34 @@
     <img src="logo.svg" alt="brightflowingspace logo" width="20" height="20">
     <span>brightflowingspace</span>
   </a>
-  <a href="https://brightflowingspace.netlify.app/" class="site-header-back">&larr; サイトに戻る / Back to site</a>
+  <div class="site-header-right">
+    <div class="theme-toggle-group">
+      <button type="button" id="theme-light" aria-label="Light mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1"    x2="12" y2="4"/>
+          <line x1="12" y1="20"   x2="12" y2="23"/>
+          <line x1="1"  y1="12"   x2="4"  y2="12"/>
+          <line x1="20" y1="12"   x2="23" y2="12"/>
+          <line x1="4.2"  y1="4.2"  x2="6.3"  y2="6.3"/>
+          <line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/>
+          <line x1="4.2"  y1="19.8" x2="6.3"  y2="17.7"/>
+          <line x1="17.7" y1="6.3"  x2="19.8" y2="4.2"/>
+        </svg>
+      </button>
+      <span>/</span>
+      <button type="button" id="theme-dark" aria-label="Dark mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="site-header-lang">
+      <a href="#ja">JP</a>
+      <span>/</span>
+      <a href="#en">EN</a>
+    </div>
+  </div>
 </header>
 <div class="wrap">
 
@@ -236,5 +301,35 @@
   <footer>&copy; 2026 Bright Todo</footer>
 
 </div>
+<script>
+  var $themeLight = document.getElementById('theme-light');
+  var $themeDark  = document.getElementById('theme-dark');
+
+  function isDark() { return document.documentElement.classList.contains('dark'); }
+
+  function updateThemeIcons() {
+    var dark = isDark();
+    $themeLight.style.color = !dark ? 'var(--accent)' : '';
+    $themeDark.style.color  = dark  ? 'var(--accent)' : '';
+  }
+  updateThemeIcons();
+
+  function setTheme(dark, remember) {
+    document.documentElement.classList.toggle('dark', dark);
+    if (remember) {
+      try { localStorage.setItem('bfs_theme', dark ? 'dark' : 'light'); } catch (e) {}
+    }
+    updateThemeIcons();
+  }
+
+  $themeLight.addEventListener('click', function () { setTheme(false, true); });
+  $themeDark.addEventListener('click', function () { setTheme(true, true); });
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+    var saved = null;
+    try { saved = localStorage.getItem('bfs_theme'); } catch (err) {}
+    if (!saved) setTheme(e.matches, false);
+  });
+</script>
 </body>
 </html>
