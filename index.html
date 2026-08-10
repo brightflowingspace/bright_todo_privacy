@@ -16,7 +16,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/site-header.css">
 <style>
   :root {
     --bg: #f8fafc;
@@ -50,64 +51,6 @@
     margin: 0 auto;
     padding: 32px 24px 96px;
   }
-  .site-header {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 20px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    border-bottom: 1px solid var(--border);
-  }
-  .site-header-brand {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: var(--fg);
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.05em;
-  }
-  .site-header-brand img { border-radius: 6px; display: block; }
-  .site-header-lang {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-  }
-  .site-header-lang a {
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.15s ease;
-  }
-  .site-header-lang a:hover { color: var(--accent); }
-  .site-header-lang span { color: var(--border); }
-  .site-header-right {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-  }
-  .theme-toggle-group {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .theme-toggle-group button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    color: var(--muted);
-    line-height: 0;
-    transition: color 0.15s ease;
-  }
-  .theme-toggle-group button svg { display: block; width: 15px; height: 15px; }
-  .theme-toggle-group span { color: var(--border); font-size: 12px; }
   .back-to-top {
     position: fixed;
     bottom: 24px;
@@ -205,7 +148,7 @@
 <body>
 <header class="site-header">
   <a href="https://brightflowingspace.netlify.app/" class="site-header-brand">
-    <img src="logo.svg" alt="brightflowingspace logo" width="20" height="20">
+    <img src="logo.svg" alt="brightflowingspace logo" width="19" height="19">
     <span>brightflowingspace</span>
   </a>
   <div class="site-header-right">
@@ -342,36 +285,8 @@
   </svg>
 </a>
 
+<script src="./assets/site-header.js"></script>
 <script>
-  var $themeLight = document.getElementById('theme-light');
-  var $themeDark  = document.getElementById('theme-dark');
-
-  function isDark() { return document.documentElement.classList.contains('dark'); }
-
-  function updateThemeIcons() {
-    var dark = isDark();
-    $themeLight.style.color = !dark ? 'var(--accent)' : '';
-    $themeDark.style.color  = dark  ? 'var(--accent)' : '';
-  }
-  updateThemeIcons();
-
-  function setTheme(dark, remember) {
-    document.documentElement.classList.toggle('dark', dark);
-    if (remember) {
-      try { localStorage.setItem('bfs_theme', dark ? 'dark' : 'light'); } catch (e) {}
-    }
-    updateThemeIcons();
-  }
-
-  $themeLight.addEventListener('click', function () { setTheme(false, true); });
-  $themeDark.addEventListener('click', function () { setTheme(true, true); });
-
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-    var saved = null;
-    try { saved = localStorage.getItem('bfs_theme'); } catch (err) {}
-    if (!saved) setTheme(e.matches, false);
-  });
-
   var $backToTop = document.querySelector('.back-to-top');
   function toggleBackToTop() {
     $backToTop.classList.toggle('visible', window.scrollY > 300);

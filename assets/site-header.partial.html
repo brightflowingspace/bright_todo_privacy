@@ -1,0 +1,52 @@
+<!--
+  Shared header markup for brightflowingspace sub-pages (privacy, support, ...).
+  This is a copy-paste reference, not a server-side include (pages are static
+  files opened directly via file:// as well as GitHub Pages, so client-side
+  fetch()-based includes would break local preview).
+
+  When adding a new page:
+    1. Copy this block right after <body>.
+    2. Add to <head>:
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="./assets/site-header.css">
+    3. Add before </body>:
+       <script src="./assets/site-header.js"></script>
+    4. Keep the inline pre-paint theme script (localStorage 'bfs_theme') in <head>,
+       and define --fg/--muted/--border/--accent on :root and :root.dark.
+-->
+<header class="site-header">
+  <a href="https://brightflowingspace.netlify.app/" class="site-header-brand">
+    <img src="logo.svg" alt="brightflowingspace logo" width="19" height="19">
+    <span>brightflowingspace</span>
+  </a>
+  <div class="site-header-right">
+    <div class="theme-toggle-group">
+      <button type="button" id="theme-light" aria-label="Light mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1"    x2="12" y2="4"/>
+          <line x1="12" y1="20"   x2="12" y2="23"/>
+          <line x1="1"  y1="12"   x2="4"  y2="12"/>
+          <line x1="20" y1="12"   x2="23" y2="12"/>
+          <line x1="4.2"  y1="4.2"  x2="6.3"  y2="6.3"/>
+          <line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/>
+          <line x1="4.2"  y1="19.8" x2="6.3"  y2="17.7"/>
+          <line x1="17.7" y1="6.3"  x2="19.8" y2="4.2"/>
+        </svg>
+      </button>
+      <span>/</span>
+      <button type="button" id="theme-dark" aria-label="Dark mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="site-header-lang">
+      <a href="#ja">JP</a>
+      <span>/</span>
+      <a href="#en">EN</a>
+    </div>
+  </div>
+</header>

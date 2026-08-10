@@ -1,0 +1,87 @@
+/*
+  Shared header styles for brightflowingspace sub-pages (privacy, support, ...).
+  Kept in sync by hand with the nav in brightflowingspace/index.html (main site).
+  Requires the host page to define --fg, --muted, --border, --accent as CSS custom
+  properties on :root / :root.dark, and to load Noto Sans JP (weights 300/400/500/700)
+  from Google Fonts before this stylesheet.
+*/
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+body { padding-top: 52px; }
+.site-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--fg);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  /* Matches Tailwind's inherited 1.5 on the main site; the host page's
+     body line-height (1.85) would otherwise push the text down ~3px. */
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+.site-header-brand img { width: 19px; height: 19px; border-radius: 6px; display: block; }
+.site-header-lang {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.2em;
+}
+.site-header-lang a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.site-header-lang a:hover { color: var(--accent); }
+.site-header-lang span { color: var(--border); }
+.site-header-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.theme-toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.theme-toggle-group button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--muted);
+  line-height: 0;
+  transition: color 0.15s ease;
+}
+.theme-toggle-group button svg { display: block; width: 14px; height: 14px; }
+.theme-toggle-group span { color: var(--border); font-size: 10px; }
+@media (min-width: 768px) {
+  .site-header { padding: 20px 48px; }
+  /* font-size/line-height mirror Tailwind's text-lg (18px/28px) and text-xs (12px/16px). */
+  .site-header-brand { gap: 12px; font-size: 18px; line-height: 28px; }
+  .site-header-brand img { width: 24px; height: 24px; }
+  .site-header-lang { font-size: 12px; line-height: 16px; }
+  .theme-toggle-group button svg { width: 16px; height: 16px; }
+  .theme-toggle-group span { font-size: 12px; }
+  body { padding-top: 69px; }
+}
