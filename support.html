@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bright Todo サポート / Support</title>
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="apple-touch-icon" href="logo.svg">
 <script>
   // Set the theme before first paint to avoid a flash of the wrong theme.
   (function () {
@@ -26,6 +28,7 @@
     --accent: #ff6fa8;
     --accent-light: #ffd7e6;
     --border: #e2e8f0;
+    --box-bg: #f1f5f9;
   }
   :root.dark {
     --bg: #1e1420;
@@ -34,6 +37,7 @@
     --accent: #ff9ec4;
     --accent-light: #5c001e;
     --border: #3a2a30;
+    --box-bg: #2a2730;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -49,7 +53,7 @@
   .wrap {
     max-width: 720px;
     margin: 0 auto;
-    padding: 32px 24px 96px;
+    padding: 32px 24px 40px;
   }
   .back-to-top {
     position: fixed;
@@ -127,20 +131,20 @@
     font-size: 17px;
     font-weight: 600;
     margin: 40px 0 12px;
-    color: var(--accent);
+    color: var(--fg);
   }
   p { margin: 0 0 16px; font-size: 15px; }
   ul { margin: 0 0 16px; padding-left: 1.3em; font-size: 15px; }
   li { margin-bottom: 6px; }
-  a.inline { color: var(--accent); }
+  a.inline { color: var(--accent); text-decoration: none; }
   .contact-box {
     margin: 8px 0 16px;
     padding: 18px 20px;
-    background: var(--accent-light);
+    background: var(--box-bg);
     border-radius: 12px;
   }
   .contact-box a {
-    color: var(--fg);
+    color: var(--accent);
     font-weight: 600;
     text-decoration: none;
   }
@@ -163,16 +167,32 @@
     text-transform: uppercase;
   }
   table.spec td.pro { color: var(--accent); font-weight: 600; }
+  .footer-links {
+    margin-top: 56px;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+  .footer-links a { color: var(--accent); text-decoration: none; }
+  .footer-links a:hover { opacity: 0.75; }
+  .footer-links .current { color: var(--muted); }
+  .footer-links .sep { color: var(--muted); margin: 0 10px; }
   footer {
-    margin-top: 72px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0;
+    padding: 12px 24px;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
     font-size: 12px;
     color: var(--muted);
     text-align: center;
     letter-spacing: 0.1em;
   }
-  footer p { margin: 0 0 8px; font-size: 12px; }
-  footer a { color: var(--muted); text-decoration: underline; }
-  footer a:hover { color: var(--accent); }
+  footer p { margin: 0; font-size: 12px; }
+  @media (min-width: 768px) {
+    footer { padding: 32px 24px; }
+  }
 </style>
 </head>
 <body>
@@ -324,12 +344,17 @@
     <p>See our <a class="inline" href="./index.html">Privacy Policy</a> for details on how we handle information.</p>
   </section>
 
-  <footer>
-    <p><a href="./index.html">プライバシーポリシー / Privacy Policy</a></p>
-    <p>&copy; 2026 brightflowingspace. ALL RIGHTS RESERVED.</p>
-  </footer>
+  <nav class="footer-links">
+    <a href="./index.html">プライバシーポリシー / Privacy Policy</a>
+    <span class="sep">｜</span>
+    <span class="current">サポート / Support</span>
+  </nav>
 
 </div>
+
+<footer>
+  <p>&copy; 2026 brightflowingspace. ALL RIGHTS RESERVED.</p>
+</footer>
 
 <a href="#" class="back-to-top" aria-label="Back to top">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
