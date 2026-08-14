@@ -23,7 +23,14 @@
   </a>
   <div class="site-header-right">
     <div class="theme-toggle-group">
-      <button type="button" id="theme-light" aria-label="Light mode">
+      <button type="button" id="theme-system" data-theme="system" aria-label="System theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2"/>
+          <line x1="8" y1="21" x2="16" y2="21"/>
+          <line x1="12" y1="17" x2="12" y2="21"/>
+        </svg>
+      </button>
+      <button type="button" id="theme-light" data-theme="light" aria-label="Light theme">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
           <circle cx="12" cy="12" r="5"/>
           <line x1="12" y1="1"    x2="12" y2="4"/>
@@ -36,8 +43,7 @@
           <line x1="17.7" y1="6.3"  x2="19.8" y2="4.2"/>
         </svg>
       </button>
-      <span>/</span>
-      <button type="button" id="theme-dark" aria-label="Dark mode">
+      <button type="button" id="theme-dark" data-theme="dark" aria-label="Dark theme">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>
         </svg>
