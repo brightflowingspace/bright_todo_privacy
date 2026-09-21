@@ -261,14 +261,15 @@
     </div>
 
     <h3>アプリについて</h3>
-    <p>Bright Todoは、シンプルさを重視したToDoリストアプリです。Android・iOS・Mac（Electron）に対応しており、アカウント登録・ログインは不要です。</p>
+    <p>Bright Todoは、シンプルさを重視したToDoリストアプリです。Android・iOS・Macの3つのプラットフォームに対応しており、基本機能はアカウント登録・ログインなしでご利用いただけます（複数端末での同期を使う場合のみ、任意でログインできます）。</p>
     <ul>
-      <li>タスクの作成・並び替え・完了管理（件数無制限）</li>
+      <li>タスクの作成・並び替え・完了管理</li>
       <li>ラベルによる分類</li>
-      <li>ホーム画面ウィジェット（Android／iOS）</li>
+      <li>ウィジェット（Android: ホーム画面・2サイズ／iOS: ホーム画面・3サイズ／Mac: デスクトップ・3サイズ）</li>
       <li>音声入力によるタスク登録</li>
       <li>リマインダー通知・繰り返しタスク</li>
       <li>データのバックアップ・エクスポート／インポート</li>
+      <li>クラウド同期（任意・Google／Appleアカウントでログイン）</li>
       <li>アプリカラー・ウィジェットカラーのカスタマイズ</li>
     </ul>
 
@@ -279,16 +280,19 @@
         <tr><th></th><th>Free</th><th>Pro</th></tr>
       </thead>
       <tbody>
-        <tr><td>タスク</td><td>無制限</td><td class="pro">無制限</td></tr>
+        <tr><td>タスク</td><td>30件まで</td><td class="pro">無制限</td></tr>
         <tr><td>ラベル</td><td>3件まで</td><td class="pro">無制限</td></tr>
         <tr><td>アプリカラー</td><td>デフォルトのみ</td><td class="pro">全色</td></tr>
         <tr><td>ウィジェットカラー</td><td>デフォルトのみ</td><td class="pro">全色</td></tr>
-        <tr><td>音声入力</td><td>—</td><td class="pro">利用可</td></tr>
+        <tr><td>音声入力</td><td>利用可</td><td class="pro">利用可</td></tr>
+        <tr><td>データのバックアップ／エクスポート／インポート</td><td>利用可</td><td class="pro">利用可</td></tr>
         <tr><td>リマインド通知</td><td>—</td><td class="pro">利用可</td></tr>
         <tr><td>繰り返し</td><td>—</td><td class="pro">利用可</td></tr>
-        <tr><td>データ管理（バックアップ／エクスポート／インポート）</td><td>—</td><td class="pro">利用可</td></tr>
+        <tr><td>クラウド同期（Apple ID）</td><td>利用可</td><td class="pro">利用可</td></tr>
+        <tr><td>クラウド同期（Google）</td><td>—</td><td class="pro">利用可</td></tr>
       </tbody>
     </table>
+    <p style="font-size:13px;color:var(--muted);margin-top:-8px;">※ Apple IDでのクラウド同期はiOS／Mac版のみです。Android版はGoogleアカウントでの同期のみ対応しています。</p>
 
     <h3>よくあるご質問</h3>
     <p><strong>Q. 機種変更・再インストール後にProが反映されません。</strong><br>
@@ -296,7 +300,9 @@
     <p><strong>Q. リマインダー通知が届きません。</strong><br>
     A. 端末の設定アプリで、Bright Todoの通知許可がオンになっているかご確認ください。</p>
     <p><strong>Q. データが消えてしまいました。</strong><br>
-    A. データはすべて端末内に保存されているため、アプリの削除（アンインストール）や端末の初期化を行うと復元できません。Pro版の「データ管理」機能で定期的にバックアップを取ることをおすすめします。</p>
+    A. データは端末内に保存されているため、アプリの削除（アンインストール）や端末の初期化を行うと復元できません。クラウド同期を有効にしていた場合は、同じアカウントで再ログインすると復元されます。「データ管理」機能で定期的にバックアップを取ることもおすすめします。</p>
+    <p><strong>Q. クラウド同期を使うとどんな情報が送信されますか。</strong><br>
+    A. タスク・ラベルの内容（タイトル・メモ・日時・色・完了状態など）が、ログインしたご本人のアカウントに紐づけてGoogle FirebaseまたはApple CloudKitに保存されます。詳しくは<a class="inline" href="./index.html">プライバシーポリシー</a>をご覧ください。</p>
 
     <h3>プライバシーポリシー</h3>
     <p>個人情報の取り扱いについては<a class="inline" href="./index.html">プライバシーポリシー</a>をご覧ください。</p>
@@ -312,14 +318,15 @@
     </div>
 
     <h3>About the App</h3>
-    <p>Bright Todo is a to-do list app built around simplicity. It runs on Android, iOS, and Mac (Electron), and requires no account or login.</p>
+    <p>Bright Todo is a to-do list app built around simplicity, available on 3 platforms — Android, iOS, and Mac. Core features require no account or login (signing in is only needed if you want to sync across multiple devices).</p>
     <ul>
-      <li>Create, reorder, and complete tasks (unlimited)</li>
+      <li>Create, reorder, and complete tasks</li>
       <li>Organize tasks with labels</li>
-      <li>Home screen widget (Android / iOS)</li>
+      <li>Widget (Android: home screen, 2 sizes / iOS: home screen, 3 sizes / Mac: desktop, 3 sizes)</li>
       <li>Add tasks with voice input</li>
       <li>Reminders and repeating tasks</li>
       <li>Backup, export, and import your data</li>
+      <li>Cloud sync (optional — sign in with Google or Apple)</li>
       <li>Customizable app color and widget color</li>
     </ul>
 
@@ -330,16 +337,19 @@
         <tr><th></th><th>Free</th><th>Pro</th></tr>
       </thead>
       <tbody>
-        <tr><td>Tasks</td><td>Unlimited</td><td class="pro">Unlimited</td></tr>
+        <tr><td>Tasks</td><td>Up to 30</td><td class="pro">Unlimited</td></tr>
         <tr><td>Labels</td><td>Up to 3</td><td class="pro">Unlimited</td></tr>
         <tr><td>App Color</td><td>Default only</td><td class="pro">All colors</td></tr>
         <tr><td>Widget Color</td><td>Default only</td><td class="pro">All colors</td></tr>
-        <tr><td>Voice Input</td><td>—</td><td class="pro">Available</td></tr>
+        <tr><td>Voice Input</td><td>Available</td><td class="pro">Available</td></tr>
+        <tr><td>Data Backup / Export / Import</td><td>Available</td><td class="pro">Available</td></tr>
         <tr><td>Reminders</td><td>—</td><td class="pro">Available</td></tr>
         <tr><td>Repeat</td><td>—</td><td class="pro">Available</td></tr>
-        <tr><td>Data (backup / export / import)</td><td>—</td><td class="pro">Available</td></tr>
+        <tr><td>Cloud Sync (Apple ID)</td><td>Available</td><td class="pro">Available</td></tr>
+        <tr><td>Cloud Sync (Google)</td><td>—</td><td class="pro">Available</td></tr>
       </tbody>
     </table>
+    <p style="font-size:13px;color:var(--muted);margin-top:-8px;">* Cloud sync via Apple ID is available on iOS/Mac only. The Android version supports Google sync only.</p>
 
     <h3>FAQ</h3>
     <p><strong>Q. I switched devices / reinstalled the app and Pro is no longer active.</strong><br>
@@ -347,7 +357,9 @@
     <p><strong>Q. I'm not receiving reminder notifications.</strong><br>
     A. Check that notifications are enabled for Bright Todo in your device's system settings.</p>
     <p><strong>Q. My data disappeared.</strong><br>
-    A. All data is stored locally on your device, so uninstalling the app or resetting your device will permanently remove it. We recommend backing up regularly using the Pro "Data" feature.</p>
+    A. Data is stored on your device, so uninstalling the app or resetting your device will permanently remove it. If you had cloud sync enabled, signing back in with the same account will restore it. We also recommend backing up regularly using the "Data" feature.</p>
+    <p><strong>Q. What information is sent when I use cloud sync?</strong><br>
+    A. Your task and label content (title, memo, dates, color, completion status, etc.) is stored on Google Firebase or Apple CloudKit, tied to your own signed-in account. See our <a class="inline" href="./index.html">Privacy Policy</a> for details.</p>
 
     <h3>Privacy Policy</h3>
     <p>See our <a class="inline" href="./index.html">Privacy Policy</a> for details on how we handle information.</p>

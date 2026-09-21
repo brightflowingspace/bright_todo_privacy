@@ -212,7 +212,7 @@
   <header class="top">
     <div class="brand">Bright Todo</div>
     <h1>プライバシーポリシー / Privacy Policy</h1>
-    <div class="updated">最終更新日 / Last updated: 2026年8月1日 (August 1, 2026)</div>
+    <div class="updated">最終更新日 / Last updated: 2026年9月21日 (September 21, 2026)</div>
     <nav class="lang">
       <a href="#ja">日本語</a>
       <a href="#en">English</a>
@@ -223,38 +223,49 @@
     <h2 class="lang-title">日本語</h2>
 
     <p>本プライバシーポリシーは、Bright Todo（以下「本アプリ」）における情報の取り扱いについて説明するものです。本アプリをご利用いただくことで、本ポリシーの内容に同意いただいたものとします。</p>
+    <p>Bright TodoはAndroid・iOS・Macの3つのプラットフォームに対応しており、本ポリシーはいずれの版にも共通して適用されます。</p>
 
     <h3>1. 収集する情報</h3>
-    <p>本アプリはアカウント登録・ログインを必要とせず、氏名・メールアドレス等の個人情報を収集しません。タスク・ラベル・並び順・表示設定などのデータは、すべて端末内にローカルに保存され、当社（開発者）のサーバーに送信されることはありません。</p>
+    <p>本アプリの基本機能（タスク・ラベルの作成／管理、カレンダー、通知、テーマ設定など）はアカウント登録・ログインを必要とせず、氏名・メールアドレス等の個人情報を収集しません。タスク・ラベル・並び順・表示設定などのデータは端末内にローカルに保存されます。ユーザーが任意で「2. クラウド同期機能」を利用する場合に限り、同項に記載する情報が処理されます。</p>
 
-    <h3>2. バックアップ・エクスポート／インポート機能</h3>
+    <h3>2. クラウド同期機能（任意）</h3>
+    <p>本アプリには、複数の端末でタスク・ラベルを同期する「クラウド同期」機能があります。この機能は完全に任意であり、利用しない場合は本アプリの全機能をアカウント登録・ログインなしでご利用いただけます。</p>
+    <p>クラウド同期を有効にすると、ログイン方法に応じて次のいずれかのサービスにデータが送信されます。</p>
+    <ul>
+      <li><strong>Googleアカウントでログインした場合</strong>: Google Firebase（Firebase Authentication／Cloud Firestore）を通じて同期されます。タスク・ラベルのデータ（タイトル、メモ、URL、日時・繰り返し設定、色、完了状態、並び順など）は、ログインしたご本人のみがアクセスできる領域に保存されます。Firebase Authenticationはログインの識別のためGoogleアカウントのメールアドレスを保持しますが、このメールアドレスがタスク・ラベルのデータ自体に含まれることはありません。</li>
+      <li><strong>Apple IDでログインした場合（Sign in with Apple）</strong>: Apple CloudKitのプライベートデータベースを通じて同期されます。データはご本人のiCloudアカウントに紐づく領域にのみ保存され、開発者はアクセスできません。</li>
+    </ul>
+    <p>いずれの方式でも、同期されたデータは開発者が直接収集・閲覧するものではなく、Google（Firebase）またはApple（CloudKit）のインフラ上でご本人のアカウントに紐づけて保管されます。詳細はそれぞれの<a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleプライバシーポリシー</a>・<a class="inline" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Appleプライバシーポリシー</a>をご確認ください。</p>
+    <p>設定画面から「アカウントを削除」を行うと、Firebase／CloudKit上に保存された同期データとログインアカウント自体が削除されます（端末内のタスク・ラベルには影響しません）。購入履歴はApple／Googleのストア側に残るため、アカウント削除後にPro表示が外れた場合は、アップグレード画面の「購入を復元」で再度反映できます。</p>
+
+    <h3>3. バックアップ・エクスポート／インポート機能</h3>
     <p>本アプリにはデータのバックアップ・エクスポート・インポート機能がありますが、これらはすべてユーザーご自身の操作により端末内またはユーザーが選択した保存先（ファイルアプリ・クラウドストレージ・共有先アプリなど）にファイルを書き出す/読み込むものであり、開発者側のサーバーに自動的に送信されることはありません。</p>
 
-    <h3>3. アプリ内課金（Pro版アップグレード）</h3>
-    <p>Pro版へのアップグレードは、サブスクリプションではなく一度限りの買い切り購入です。購入管理には購入管理サービスであるRevenueCatを利用しています。購入処理自体はGoogle Play課金システムまたはApple App Storeを通じて行われ、RevenueCatは購入の検証とPro版の権限管理のために、匿名化された識別子および購入情報（購入日・商品ID・購入状態など）を処理します。これらの情報にお客様の氏名やメールアドレスが含まれることはありません。詳細はRevenueCatの<a class="inline" href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>をご確認ください。</p>
+    <h3>4. アプリ内課金（Pro版アップグレード）</h3>
+    <p>Pro版へのアップグレードは、サブスクリプションではなく一度限りの買い切り購入です。購入管理には購入管理サービスであるRevenueCatを利用しています。購入処理自体はGoogle Play課金システムまたはApple App Storeを通じて行われ、RevenueCatは購入の検証とPro版の権限管理のために、匿名化された識別子および購入情報（購入日・商品ID・購入状態など）を処理します。本アプリは起動のたびに、この匿名の識別子（クラウド同期でログイン中の場合はログインアカウントに紐づく識別子）を用いてRevenueCatに購入状況を問い合わせますが、氏名やメールアドレスが含まれることはありません。詳細はRevenueCatの<a class="inline" href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>をご確認ください。</p>
 
-    <h3>4. 音声入力機能</h3>
-    <p>音声入力機能をご利用いただく際は、お使いの端末のOSが提供する音声認識サービス（Androidの場合はGoogle、iOSの場合はApple）を通じて音声をテキストに変換します。音声データは各OS提供元のサービスにより処理され、本アプリ自体が音声データを保存・送信・利用することはありません。</p>
+    <h3>5. 音声入力機能</h3>
+    <p>音声入力機能をご利用いただく際は、お使いの端末のOSが提供する音声認識サービス（Androidの場合はGoogle、iOS／Macの場合はApple）を通じて音声をテキストに変換します。音声データは各OS提供元のサービスにより処理され、本アプリ自体が音声データを保存・送信・利用することはありません。</p>
 
-    <h3>5. 通知（リマインダー）</h3>
+    <h3>6. 通知（リマインダー）</h3>
     <p>リマインダー通知は端末内でローカルにスケジュールされる仕組みであり、通知内容が外部サーバーに送信されることはありません。</p>
 
-    <h3>6. 広告・分析・トラッキング</h3>
+    <h3>7. 広告・分析・トラッキング</h3>
     <p>本アプリには広告SDK・アクセス解析SDK・行動トラッキングの仕組みは組み込まれていません。</p>
 
-    <h3>7. 第三者への情報提供</h3>
-    <p>上記「3. アプリ内課金」に記載した課金関連サービス（RevenueCat、Google Play、Apple App Store）を除き、収集した情報を第三者に提供することはありません。</p>
+    <h3>8. 第三者への情報提供</h3>
+    <p>上記「2. クラウド同期機能」「4. アプリ内課金」に記載した各サービス（Google Firebase、Apple CloudKit、RevenueCat、Google Play、Apple App Store）を除き、収集した情報を第三者に提供することはありません。</p>
 
-    <h3>8. データの削除</h3>
-    <p>本アプリをアンインストールすると、端末内に保存されたデータはすべて削除されます。また、アプリ内の設定からデータをリセットすることも可能です。</p>
+    <h3>9. データの削除</h3>
+    <p>本アプリをアンインストールすると、端末内に保存されたデータはすべて削除されます。また、アプリ内の設定から「リセット」を行うと、端末内のタスク・ラベルを一括削除できます。クラウド同期が有効な場合、このリセットはクラウド上の同期データにも反映され、Firebase／CloudKit上のタスク・ラベルも削除されます。なお、アンインストールだけではクラウド上の同期データは削除されません。ログインアカウント自体と同期データを完全に削除したい場合は、設定画面の「アカウントを削除」を行ってください。</p>
 
-    <h3>9. お子様のプライバシー</h3>
+    <h3>10. お子様のプライバシー</h3>
     <p>本アプリは13歳未満のお子様を対象として個人情報を意図的に収集することはありません。</p>
 
-    <h3>10. 本ポリシーの変更</h3>
+    <h3>11. 本ポリシーの変更</h3>
     <p>法令の改正やサービス内容の変更に伴い、本ポリシーの内容を予告なく変更する場合があります。変更後の内容は本ページに掲載した時点で効力を生じるものとします。</p>
 
-    <h3>11. お問い合わせ</h3>
+    <h3>12. お問い合わせ</h3>
     <p>本ポリシーに関するご質問・お問い合わせは、下記メールアドレスまでご連絡ください。</p>
     <p><a class="inline" href="mailto:brightflowingspace@gmail.com">brightflowingspace@gmail.com</a></p>
   </section>
@@ -263,38 +274,49 @@
     <h2 class="lang-title">English</h2>
 
     <p>This Privacy Policy explains how Bright Todo (the "App") handles information. By using the App, you agree to the terms described in this policy.</p>
+    <p>Bright Todo is available on 3 platforms — Android, iOS, and Mac — and this policy applies equally to all of them.</p>
 
     <h3>1. Information We Collect</h3>
-    <p>The App does not require account creation or login, and does not collect personal information such as your name or email address. All data — including tasks, labels, sort order, and display settings — is stored locally on your device only and is never sent to the developer's servers.</p>
+    <p>The App's core features (creating and managing tasks/labels, calendar, notifications, theme settings, etc.) do not require account creation or login, and do not collect personal information such as your name or email address. Tasks, labels, sort order, and display settings are stored locally on your device. Information is processed beyond your device only if you choose to use the optional "2. Cloud Sync" feature described below.</p>
 
-    <h3>2. Backup, Export &amp; Import</h3>
+    <h3>2. Cloud Sync (Optional)</h3>
+    <p>The App offers an optional "cloud sync" feature to sync tasks and labels across multiple devices. This feature is entirely optional — if you don't use it, every feature of the App is available without creating an account or logging in.</p>
+    <p>When you enable cloud sync, data is sent to one of the following services depending on how you sign in:</p>
+    <ul>
+      <li><strong>Signing in with a Google account</strong>: Syncing is handled through Google Firebase (Firebase Authentication / Cloud Firestore). Your task and label data (title, memo, URL, dates and repeat settings, color, completion status, sort order, etc.) is stored in an area accessible only to you. Firebase Authentication retains your Google account's email address to identify your login session, but this email address is never included in the task/label data itself.</li>
+      <li><strong>Signing in with Apple ID (Sign in with Apple)</strong>: Syncing is handled through Apple CloudKit's private database. Data is stored only in an area tied to your own iCloud account, which the developer cannot access.</li>
+    </ul>
+    <p>In either case, synced data is not collected or viewed directly by the developer — it is stored on Google's (Firebase) or Apple's (CloudKit) infrastructure, tied to your own account. See <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and <a class="inline" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a> for details.</p>
+    <p>Using "Delete Account" in the App's settings deletes your synced data on Firebase/CloudKit as well as the login account itself (this does not affect the tasks/labels stored on your device). Your purchase history remains with Apple's or Google's store, so if Pro is no longer shown after deleting your account, you can restore it using "Restore Purchase" on the upgrade screen.</p>
+
+    <h3>3. Backup, Export &amp; Import</h3>
     <p>The App includes backup, export, and import features. These operate only when initiated by you, writing to or reading from a file on your device or a destination you choose (Files app, cloud storage, a sharing target app, etc.). No data is automatically transmitted to the developer's servers.</p>
 
-    <h3>3. In-App Purchases (Pro Upgrade)</h3>
-    <p>Upgrading to Pro is a one-time purchase, not a subscription. It is handled using RevenueCat, a purchase management service. Purchases themselves are processed through Google Play Billing or the Apple App Store. RevenueCat processes an anonymized identifier and purchase-related information (purchase date, product ID, purchase status, etc.) to validate purchases and manage Pro entitlements. This information never includes your name or email address. See RevenueCat's <a class="inline" href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener">Privacy Policy</a> for details.</p>
+    <h3>4. In-App Purchases (Pro Upgrade)</h3>
+    <p>Upgrading to Pro is a one-time purchase, not a subscription. It is handled using RevenueCat, a purchase management service. Purchases themselves are processed through Google Play Billing or the Apple App Store. RevenueCat processes an anonymized identifier and purchase-related information (purchase date, product ID, purchase status, etc.) to validate purchases and manage Pro entitlements. Each time the App launches, it queries RevenueCat for your purchase status using this anonymous identifier (or, if you're signed in for cloud sync, an identifier tied to your login account), but this never includes your name or email address. See RevenueCat's <a class="inline" href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener">Privacy Policy</a> for details.</p>
 
-    <h3>4. Voice Input</h3>
-    <p>When you use the voice input feature, speech is converted to text using your device's built-in speech recognition service (Google on Android, Apple on iOS). Audio is processed by that platform provider's service; the App itself does not store, transmit, or otherwise use your voice data.</p>
+    <h3>5. Voice Input</h3>
+    <p>When you use the voice input feature, speech is converted to text using your device's built-in speech recognition service (Google on Android, Apple on iOS/Mac). Audio is processed by that platform provider's service; the App itself does not store, transmit, or otherwise use your voice data.</p>
 
-    <h3>5. Notifications (Reminders)</h3>
+    <h3>6. Notifications (Reminders)</h3>
     <p>Reminder notifications are scheduled locally on your device. Notification content is never sent to any external server.</p>
 
-    <h3>6. Advertising, Analytics &amp; Tracking</h3>
+    <h3>7. Advertising, Analytics &amp; Tracking</h3>
     <p>The App does not include any advertising SDK, analytics SDK, or behavioral tracking mechanism.</p>
 
-    <h3>7. Sharing with Third Parties</h3>
-    <p>Other than the purchase-related services described in Section 3 (RevenueCat, Google Play, Apple App Store), we do not share collected information with third parties.</p>
+    <h3>8. Sharing with Third Parties</h3>
+    <p>Other than the services described in Section 2 (Cloud Sync) and Section 4 (In-App Purchases) — Google Firebase, Apple CloudKit, RevenueCat, Google Play, and Apple App Store — we do not share collected information with third parties.</p>
 
-    <h3>8. Data Deletion</h3>
-    <p>Uninstalling the App removes all data stored on your device. You may also reset app data from within the App's settings.</p>
+    <h3>9. Data Deletion</h3>
+    <p>Uninstalling the App removes all data stored on your device. You can also use "Reset" in the App's settings to bulk-delete your tasks and labels on your device. If cloud sync is enabled, this reset also propagates to your synced data, deleting the corresponding tasks/labels on Firebase/CloudKit as well. Note that uninstalling the App alone does not delete your synced data on Firebase/CloudKit — use "Delete Account" in the App's settings to remove the login account and its synced data entirely.</p>
 
-    <h3>9. Children's Privacy</h3>
+    <h3>10. Children's Privacy</h3>
     <p>The App does not knowingly collect personal information from children under the age of 13.</p>
 
-    <h3>10. Changes to This Policy</h3>
+    <h3>11. Changes to This Policy</h3>
     <p>This policy may be updated from time to time to reflect changes in law or in the App's functionality, without prior notice. Changes take effect once posted on this page.</p>
 
-    <h3>11. Contact</h3>
+    <h3>12. Contact</h3>
     <p>If you have any questions about this policy, please contact us at the email address below.</p>
     <p><a class="inline" href="mailto:brightflowingspace@gmail.com">brightflowingspace@gmail.com</a></p>
   </section>
